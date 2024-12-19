@@ -1,0 +1,50 @@
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <link rel="stylesheet" href="/main.css">-->
+<!--    <title>Event Booking page - Welcome and choose an Event</title>-->
+
+<!--    <style type="text/css">-->
+<!--        body {-->
+<!--            width: 800px;-->
+<!--            margin: auto;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<header>-->
+<!--    <h1>Welcome to our Event Booking App</h1>-->
+<!--</header>-->
+<!--<main>-->
+<!--    <h2>Choose an event:</h2>-->
+<!--    <form th:method="POST" th:action="@{/eventBooking}">-->
+<!--        <div th:each="event : ${events}">-->
+<!--            <label>-->
+<!--                <input type="radio" name="eventName" th:value="${event.name}">-->
+<!--                Name: <span th:text="${event.name}">Event name</span>-->
+<!--                Description: <span th:text="${event.description}">Event description</span>-->
+<!--                Popularity: <span th:text="${event.popularityScore}">Event popularity</span>-->
+<!--            </label><br/>-->
+<!--        </div>-->
+<!--        <h2>Choose number of tickets:</h2>-->
+<!--        <input type="number" name="numTickets" min="1" max="10"><br/>-->
+<!--        <br/>-->
+<!--        <input type="submit" value="Submit">-->
+<!--    </form>-->
+
+<!--    <form th:method="POST" th:action="@{/}">-->
+<!--        <h2>Search event</h2>-->
+<!--        <input type="text" name="name" id="name">-->
+<!--        <input type="number" name="rating" id="rating">-->
+<!--        <input type="submit" value="Search">-->
+
+<!--        <ul>-->
+<!--            <li th:each="event : ${session.eventList}">-->
+<!--                <span th:text="${'Name: ' + event.name + ' Description: ' + event.description + ' Popularity: ' + event.popularityScore}"></span>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </form>-->
+<!--</main>-->
+<!--</body>-->
+<!--</html>-->

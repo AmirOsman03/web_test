@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e59232f0a1.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: #fff;
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #6a11cb;
+            border-color: #6a11cb;
+        }
+
+        .btn-primary:hover {
+            background-color: #2575fc;
+            border-color: #2575fc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mb-4">
+    <form class="form-signin mt-xl-5" method="post" action="/register">
+        <h2 class="form-signin-heading text-center mb-4">Register</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required
+                   autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   required>
+        </p>
+        <p>
+            <label for="repeatedPassword" class="sr-only">Repeat Password</label>
+            <input type="password" id="repeatedPassword" name="repeatedPassword" class="form-control"
+                   placeholder="Repeat Password" required>
+        </p>
+        <p>
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+        </p>
+        <p>
+            <label for="surname" class="sr-only">Surname</label>
+            <input type="text" id="surname" name="surname" class="form-control" placeholder="Surname" required>
+        </p>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="role" type="radio" id="ROLE_ADMIN" value="ROLE_ADMIN">
+            <label class="form-check-label" for="ROLE_ADMIN">ADMIN</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="role" type="radio" id="ROLE_USER" value="ROLE_USER">
+            <label class="form-check-label" for="ROLE_USER">USER</label>
+        </div>
+
+        <th:block th:if="${hasError}">
+            <div th:text="${error}" class="text-danger"></div>
+        </th:block>
+
+        <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">Sign up</button>
+    </form>
+    <a href="/login" class="btn btn-block btn-light mt-3">Already have an account? Login here!</a>
+</div>
+
+</body>
+</html>

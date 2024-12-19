@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Confirmation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #6a11cb;
+        }
+
+        .table {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table th {
+            background-color: #6a11cb;
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn-dark {
+            background-color: #6a11cb;
+            border-color: #6a11cb;
+        }
+
+        .btn-dark:hover {
+            background-color: #2575fc;
+            border-color: #2575fc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <h1 class="header-title">Event Booking - Booking Confirmation</h1>
+    </header>
+
+    <!-- Confirmation Table -->
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="thead-dark">
+        <tr>
+            <th colspan="2">Your Booking Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><strong>Attendee Name</strong></td>
+            <td th:text="${eventBooking.attendeeName}"></td>
+        </tr>
+        <tr>
+            <td><strong>Client IP Address</strong></td>
+            <td th:text="${eventBooking.attendeeAddress}"></td>
+        </tr>
+        <tr>
+            <td><strong>Booking for Event</strong></td>
+            <td th:text="${eventBooking.eventName}"></td>
+        </tr>
+        <tr>
+            <td><strong>Number of Tickets</strong></td>
+            <td th:text="${eventBooking.numberOfTickets}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Back to Events Button -->
+    <div class="text-center mt-4">
+        <a href="/events" class="btn btn-dark">Back to Events</a>
+    </div>
+</div>
+</body>
+</html>
